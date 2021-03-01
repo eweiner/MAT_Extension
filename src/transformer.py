@@ -241,8 +241,8 @@ def attention(query, key, value, adj_matrix, distances_matrix, edges_att,
     if dropout is not None:
         p_weighted = dropout(p_weighted)
 
-    atoms_featrues = torch.matmul(p_weighted, value)     
-    return atoms_featrues, p_weighted, p_attn
+    atoms_features = torch.matmul(p_weighted, value)     
+    return atoms_features, p_weighted, p_attn
 
 
 class MultiHeadedAttention(nn.Module):
