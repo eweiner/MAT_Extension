@@ -262,6 +262,7 @@ class MultiHeadedAttention(nn.Module):
         else:
             lambda_adjacency = 1. - lambda_attention - lambda_distance
             self.lambdas = (lambda_attention, lambda_distance, lambda_adjacency)
+            print(self.lambdas)
             
         self.linears = clones(nn.Linear(d_model, d_model), 4)
         self.attn = None
